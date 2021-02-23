@@ -5,6 +5,11 @@
       "typescript",
       "typescriptreact"
     ],
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
     "extensions.ignoreRecommendations": true,
     "files.autoSave": "off",
     "typescript.tsc.autoDetect": "off",
