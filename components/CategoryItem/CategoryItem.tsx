@@ -31,7 +31,11 @@ const CategoryItem: React.FC<IProps> = ({ item }) => {
           <Text style={styles.progressText} numberOfLines={1}>
             8 из 151 слов
           </Text>
-          <Progress.Bar progress={0.3} width={120} />
+          <Progress.Bar
+            progress={0.3}
+            width={120}
+            color="rgba(20, 204, 96, 1)"
+          />
         </View>
       </View>
     </View>
