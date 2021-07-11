@@ -1,21 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
-
-import useCachedResources from './hooks/useCachedResources';
+import * as eva from '@eva-design/eva';
+import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
+import { FontAwesomeIconsPack } from './fontawesome-icons';
 import Navigation from './navigation';
+import { Provider } from 'mobx-react';
+import RootStore from './store/RootStore';
 
-export default function App() {
-  const isLoadingComplete = useCachedResources();
-
-  if (!isLoadingComplete) {
-    return null;
-  } else {
-    return (
-      <SafeAreaProvider>
-        <Navigation />
-        <StatusBar />
-      </SafeAreaProvider>
-    );
-  }
-}
+const App: React.FC = () => {
+  return (
+    <>
+      <IconRegistry icons={FontAwesomeIconsPack} />
+      <ApplicationProvider {...eva} theme={eva.light}>
+        <SafeAreaProvider>
+          <Provider rootStore={RootStore} authStore={RootStore.authStore}>
+            <Navigation />
+          </Provider>
+        </SafeAreaProvider>
+      </ApplicationProvider>
+    </>
+  );
+};
+export default App;

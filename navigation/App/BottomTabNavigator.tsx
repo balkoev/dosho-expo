@@ -3,9 +3,13 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
-import TabTwoScreen from '../screens/TabTwoScreen';
-import HomeScreen from '../screens/HomeScreen';
-import { BottomTabParamList, TabTwoParamList, HomeParamList } from '../types';
+import TabTwoScreen from '../../screens/TabTwoScreen';
+import HomeScreen from '../../screens/HomeScreen';
+import {
+  BottomTabParamList,
+  TabTwoParamList,
+  HomeParamList,
+} from '../../types/navigation';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
